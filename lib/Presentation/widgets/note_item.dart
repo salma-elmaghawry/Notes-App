@@ -7,7 +7,7 @@ class NoteItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.only(right: 12,left: 5.0,top:8.0,bottom: 11 ),
+      padding:const  EdgeInsets.only(left: 5.0,top:11,bottom: 18 ),
         decoration: BoxDecoration(
           color: color,
           borderRadius: BorderRadius.circular(15),
@@ -20,23 +20,29 @@ class NoteItem extends StatelessWidget {
                 "Salma Note",
                 style: TextStyle(color: Colors.black, fontSize: 26),
               ),
-              subtitle: const Text(
-                "It is a CS studnet hjhbjvbghvcgk,      lknl ",
-                style: TextStyle(
-                  color: Color.fromARGB(255, 65, 64, 64),
-                  fontSize: 16,
+              subtitle:const  Padding(
+                padding:  EdgeInsets.only(top: 10,bottom: 10),
+                child:  Text(
+                  "It is a CS studnet hjhbjvbghvcgk ",
+                  style: TextStyle(
+                    color: Color.fromARGB(255, 65, 64, 64),
+                    fontSize: 16,
+                  ),
                 ),
               ),
               trailing: IconButton(
                 onPressed: () {},
-                icon: Icon(Icons.delete),
+                icon:const  Icon(Icons.delete),
                 iconSize: 30,
                 color: Colors.black,
               ),
             ),
-            const Text(
-              "May 21,2024",
-              style: TextStyle(color: Color.fromARGB(255, 65, 64, 64),),
+            const Padding(
+              padding:  EdgeInsets.only(right: 20),
+              child:  Text(
+                "May 21,2024",
+                style: TextStyle(color: Color.fromARGB(255, 65, 64, 64),),
+              ),
             ),
           ],
         ));
