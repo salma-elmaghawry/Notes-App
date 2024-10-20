@@ -5,21 +5,18 @@ class CustomAppBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Padding(
-      padding: EdgeInsets.all(8.0),
-      child:  Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    return  Row(
+      //mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children:  [
+        const Text("Hello,\nMy Notes",style: TextStyle(
+          fontSize: 32,
+        ),),
+        const   Spacer(),
+        Image.asset("assets/images/notepad.png",width: 50,height: 45,),
         
-        children:  [
-          Text("Hello,\nMy Notes",style: TextStyle(
-            fontSize: 25,
-          ),),
-          Image.asset("assets/images/notepad.png",width: 50,height: 45,),
-          
+      
         
-          
-        ],
-      ),
+      ],
     );
   }
 }

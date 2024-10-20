@@ -7,8 +7,10 @@ class CustomTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      cursorColor: primaryColor,
       decoration: InputDecoration(
         hintText: "Search Here ",
+        
         
           filled: true,
         //fillColor: const Color.fromARGB(255, 212, 215, 219),
