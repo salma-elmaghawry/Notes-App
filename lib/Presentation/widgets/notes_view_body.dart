@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:notes/Presentation/widgets/custom_app_bar.dart';
 import 'package:notes/Presentation/widgets/custom_text_field.dart';
 import 'package:notes/Presentation/widgets/note_item.dart';
+import 'package:notes/Presentation/widgets/notes_list_view.dart';
 import 'package:notes/helper/constants.dart';
 
 class NotesViewBody extends StatelessWidget {
@@ -20,6 +21,7 @@ class NotesViewBody extends StatelessWidget {
           SizedBox(height: 10),
           CustomTextField(),
           SizedBox(height: 15),
+          Expanded(child: NotesListView()),
         ],
       ),
     );
