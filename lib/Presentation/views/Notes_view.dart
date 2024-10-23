@@ -13,12 +13,14 @@ class NotesView extends StatelessWidget {
         //shape: const CircleBorder(),
         onPressed: () {
           showModalBottomSheet(
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(20)),
               context: context,
               builder: (context) {
-                return const  AddNoteButtomsheet();
+                return const AddNoteButtomsheet();
               });
         },
-        child:  Icon( Icons.add),
+        child: Icon(Icons.add),
         backgroundColor: primaryColor,
       ),
       body: const NotesViewBody(),
