@@ -19,7 +19,7 @@ class NotesViewBody extends StatelessWidget {
           ),
           CustomAppBar(),
           SizedBox(height: 10),
-          CustomTextField(),
+          CustomTextField(prefixIcon: Icon(Icons.search, color: Colors.grey),hintText: "Search Here",),
           SizedBox(height: 15),
           Expanded(child: NotesListView()),
         ],
