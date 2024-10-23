@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:notes/helper/constants.dart';
 
 class NoteItem extends StatelessWidget {
   NoteItem({required this.color, super.key});
@@ -21,11 +22,11 @@ class NoteItem extends StatelessWidget {
                 style: TextStyle(color: Colors.black, fontSize: 26),
               ),
               subtitle:const  Padding(
-                padding:  EdgeInsets.only(top: 10,bottom: 10),
+                padding:  EdgeInsets.only(top: 8,bottom: 10),
                 child:  Text(
                   "It is a CS studnet hjhbjvbghvcgk ",
                   style: TextStyle(
-                    color: Color.fromARGB(255, 65, 64, 64),
+                    color: grey,
                     fontSize: 16,
                   ),
                 ),
@@ -41,7 +42,7 @@ class NoteItem extends StatelessWidget {
               padding:  EdgeInsets.only(right: 20),
               child:  Text(
                 "May 21,2024",
-                style: TextStyle(color: Color.fromARGB(255, 65, 64, 64),),
+                style: TextStyle(color: grey,),
               ),
             ),
           ],
