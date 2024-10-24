@@ -2,23 +2,34 @@ import 'package:flutter/material.dart';
 import 'package:notes/helper/constants.dart';
 
 class CustomButton extends StatelessWidget {
-  const CustomButton({super.key, required this.text});
   final String text;
+  final VoidCallback onPressed; // Accepts a callback function
+
+  const CustomButton({
+    Key? key,
+    required this.text,
+    required this.onPressed, // Make onPressed required
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: MediaQuery.of(context).size.width,
-      height: 55,
-      decoration: BoxDecoration(
-        color: primaryColor,
-        borderRadius: BorderRadius.circular(15),
+    return ElevatedButton(
+      
+      onPressed: onPressed, // Calls the passed function when pressed
+      style: ElevatedButton.styleFrom(
+        backgroundColor: primaryColor,
+        padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(15),
+        ),
       ),
-      child: Center(
-          child: Text(
+      child: Text(
         text,
-        style:const  TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-      )),
+        style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+              color: Colors.white,
+              fontWeight: FontWeight.bold,
+            ),
+      ),
     );
   }
 }

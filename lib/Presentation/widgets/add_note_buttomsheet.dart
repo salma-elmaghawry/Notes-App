@@ -7,7 +7,7 @@ class AddNoteButtomsheet extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  const Padding(
+    return   Padding(
       padding: EdgeInsets.all(10),
       child:   SingleChildScrollView(
         child: Column(
@@ -17,7 +17,7 @@ class AddNoteButtomsheet extends StatelessWidget {
             SizedBox(height: 20,),
             CustomTextField(hintText: "Content",maxLines: 5,),
               SizedBox(height: 30,),
-            CustomButton(text: "Add",),
+            CustomButton(text: "Add",onPressed:(){}),
             SizedBox(height: 20,),
           ],
         ),

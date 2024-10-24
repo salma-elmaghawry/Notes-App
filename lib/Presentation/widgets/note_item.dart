@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:notes/Presentation/widgets/edit_note_view_body.dart';
+import 'package:notes/Presentation/widgets/custom_button.dart';
+import 'package:notes/Presentation/widgets/custom_text_field.dart';
+import 'package:notes/Presentation/widgets/edit_note_dialog.dart';
 import 'package:notes/helper/constants.dart';
 
 class NoteItem extends StatelessWidget {
@@ -10,10 +12,7 @@ class NoteItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-      Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const EditNoteViewBody()),
-            );
+    showEditDialog(context);
       },
       child: Container(
           padding: const EdgeInsets.only(left: 5.0, top: 11, bottom: 18),
