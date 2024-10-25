@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hive_flutter/adapters.dart';
 import 'package:notes/Business-Logic/cubits/cubit/add_note_cubit.dart';
 import 'package:notes/Data/Models/note_model.dart';
