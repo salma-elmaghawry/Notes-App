@@ -26,4 +26,4 @@ class SimpleBlocObserver extends BlocObserver {
     super.onTransition(bloc, transition);
     // TODO: implement onChange
   }
-}{}
+}
