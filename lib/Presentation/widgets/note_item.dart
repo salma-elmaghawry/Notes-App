@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:notes/Business-Logic/cubits/notes-cubit/notes_cubit.dart';
 import 'package:notes/Data/Models/note_model.dart';
 import 'package:notes/Presentation/widgets/custom_button.dart';
 import 'package:notes/Presentation/widgets/custom_text_field.dart';
@@ -6,7 +8,7 @@ import 'package:notes/Presentation/widgets/edit_note_dialog.dart';
 import 'package:notes/helper/constants.dart';
 
 class NoteItem extends StatelessWidget {
-  NoteItem({ super.key, required this.note});
+  NoteItem({super.key, required this.note});
   final NoteModel note;
 
   @override
@@ -45,7 +47,10 @@ class NoteItem extends StatelessWidget {
                       color: Colors.black,
                     ),
                     IconButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        note.delete();
+                        BlocProvider.of<NotesCubit>(context).fecthAllNotes();
+                      },
                       icon: const Icon(Icons.delete),
                       iconSize: 24,
                       color: Colors.black,
