@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:notes/Business-Logic/cubits/cubit/notes_cubit.dart';
+import 'package:notes/Business-Logic/cubits/notes-cubit/notes_cubit.dart';
 import 'package:notes/Presentation/widgets/notes_view_body.dart';
 import 'package:notes/Presentation/widgets/add_note_buttomsheet.dart';
 import 'package:notes/helper/constants.dart';
