@@ -1,61 +1,81 @@
 import 'package:flutter/material.dart';
+import 'package:notes/Data/Models/note_model.dart';
 import 'package:notes/Presentation/widgets/custom_button.dart';
 import 'package:notes/Presentation/widgets/custom_text_field.dart';
 import 'package:notes/Presentation/widgets/edit_note_dialog.dart';
 import 'package:notes/helper/constants.dart';
 
 class NoteItem extends StatelessWidget {
-  NoteItem({required this.color, super.key});
-  Color color;
+  NoteItem({ super.key, required this.note});
+  final NoteModel note;
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-    showEditDialog(context);
+        showEditDialog(context);
       },
       child: Container(
-          padding: const EdgeInsets.only(left: 5.0, top: 11, bottom: 18),
-          decoration: BoxDecoration(
-            color: color,
-            borderRadius: BorderRadius.circular(15),
-          ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.end,
-            children: [
-              ListTile(
-                title: const Text(
-                  "Salma Note",
-                  style: TextStyle(color: Colors.black, fontSize: 26),
-                ),
-                subtitle: const Padding(
-                  padding: EdgeInsets.only(top: 8, bottom: 10),
+        padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 16),
+        decoration: BoxDecoration(
+          color: Color(note.color),
+          borderRadius: BorderRadius.circular(15),
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              children: [
+                Expanded(
                   child: Text(
-                    "It is a CS studnet hjhbjvbghvcgk ",
-                    style: TextStyle(
-                      color: grey,
-                      fontSize: 16,
+                    note.title,
+                    style: const TextStyle(
+                      color: Colors.black,
+                      fontSize: 25,
+                      fontWeight: FontWeight.bold,
                     ),
                   ),
                 ),
-                trailing: IconButton(
-                  onPressed: () {},
-                  icon: const Icon(Icons.delete),
-                  iconSize: 30,
-                  color: Colors.black,
+                Row(
+                  children: [
+                    IconButton(
+                      onPressed: () {},
+                      icon: const Icon(Icons.edit),
+                      iconSize: 24,
+                      color: Colors.black,
+                    ),
+                    IconButton(
+                      onPressed: () {},
+                      icon: const Icon(Icons.delete),
+                      iconSize: 24,
+                      color: Colors.black,
+                    ),
+                  ],
+                ),
+              ],
+            ),
+            const SizedBox(height: 8),
+            Text(
+              note.subtitle,
+              style: const TextStyle(
+                color: grey,
+                fontSize: 16,
+              ),
+            ),
+            const SizedBox(height: 16),
+            Align(
+              alignment: Alignment.centerRight,
+              child: Text(
+                note.date,
+                style: const TextStyle(
+                  color: grey,
+                  fontSize: 15,
                 ),
               ),
-              const Padding(
-                padding: EdgeInsets.only(right: 20),
-                child: Text(
-                  "May 21,2024",
-                  style: TextStyle(
-                    color: grey,
-                  ),
-                ),
-              ),
-            ],
-          )),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
