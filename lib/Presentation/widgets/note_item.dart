@@ -31,7 +31,7 @@ class NoteItem extends StatelessWidget {
                     note.title,
                     style: const TextStyle(
                       color: Colors.black,
-                      fontSize: 25,
+                      fontSize: 23,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
@@ -59,7 +59,7 @@ class NoteItem extends StatelessWidget {
               note.subtitle,
               style: const TextStyle(
                 color: grey,
-                fontSize: 16,
+                fontSize: 17,
               ),
             ),
             const SizedBox(height: 16),
