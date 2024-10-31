@@ -47,10 +47,12 @@ class _NoteItemState extends State<NoteItem> {
                 children: [
                   IconButton(
                     onPressed: () {
-                      showEditDialog(context, widget.note, (newTitle, newContent) {
+                      showEditDialog(context, widget.note,
+                          (newTitle, newContent, color) {
                         setState(() {
                           title = newTitle;
                           content = newContent;
+                          color = color;
                         });
                       });
                     },
@@ -95,4 +97,3 @@ class _NoteItemState extends State<NoteItem> {
     );
   }
 }
-
