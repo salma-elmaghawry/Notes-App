@@ -21,24 +21,24 @@ class _NotesViewBodyState extends State<NotesViewBody> {
 
   @override
   Widget build(BuildContext context) {
-    return const Padding(
+    return  Padding(
       padding: EdgeInsets.only(top: 5, bottom: 10, left: 12, right: 12),
       child: Column(
         children: [
-          SizedBox(
+          const SizedBox(
             height: 40,
           ),
-          CustomAppBar(
+          const CustomAppBar(
             title: "Hello,\nMy Notes",
             imgUrl: "assets/images/notepad.png",
           ),
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
           CustomTextField(
             prefixIcon: Icon(Icons.search, color: Colors.grey),
             hintText: "Search Here",
           ),
-          SizedBox(height: 15),
-          Expanded(child: NotesListView()),
+          const SizedBox(height: 15),
+          const Expanded(child: NotesListView()),
         ],
       ),
     );

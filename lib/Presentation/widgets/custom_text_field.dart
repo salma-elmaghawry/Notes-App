@@ -2,21 +2,23 @@ import 'package:flutter/material.dart';
 import 'package:notes/helper/constants.dart';
 
 class CustomTextField extends StatelessWidget {
-  const CustomTextField(
+    CustomTextField(
       {super.key,
       required this.hintText,
       this.prefixIcon,
       this.maxLines = 1,
-      this.onSaved});
+      this.onSaved,this.onchange});
   final String hintText;
   final int maxLines;
   final Icon? prefixIcon;
   final void Function(String?)? onSaved;
+  final Function(String)? onchange;
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
       onSaved: onSaved,
+      onChanged: onchange,
       validator: (value) {
         if (value?.isEmpty ?? true) {
           return 'Value is required';
@@ -28,7 +30,7 @@ class CustomTextField extends StatelessWidget {
       decoration: InputDecoration(
         hintText: hintText,
         errorStyle: const TextStyle(
-          color: Color.fromARGB(255, 250, 82, 70), 
+          color: Color.fromARGB(255, 250, 82, 70),
           // Red color for error text
         ),
         filled: true,
@@ -37,7 +39,6 @@ class CustomTextField extends StatelessWidget {
         prefixIcon: prefixIcon,
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(15),
-          
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(15),
