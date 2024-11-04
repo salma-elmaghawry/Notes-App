@@ -4,7 +4,7 @@ import 'package:hive_flutter/adapters.dart';
 import 'package:notes/Business-Logic/cubits/notes-cubit/notes_cubit.dart';
 import 'package:notes/Business-Logic/simple_bloc_observer.dart';
 import 'package:notes/Data/Models/note_model.dart';
-import 'package:notes/Presentation/views/notes_view.dart';
+import 'package:notes/Presentation/onboard/onboardingScreen.dart';
 import 'package:notes/helper/constants.dart';
 import 'package:bloc/bloc.dart';
 
@@ -32,7 +32,7 @@ class NotesApp extends StatelessWidget {
             fontFamily: "Sofia Sans",
             //scaffoldBackgroundColor:
           ),
-          home: const NotesView(),
+          home:  OnboardingScreen(),
         ),
     );
   }
